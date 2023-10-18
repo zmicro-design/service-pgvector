@@ -6,8 +6,8 @@ if [ $? -ne 0 ]; then
 fi
 
 if [ "$TESTING" = "true" ]; then
-  zmicro service test fastgpt
+  zmicro service test pgvector
   exit 0
 fi
 
-zmicro service start fastgpt
+zmicro service start pgvector

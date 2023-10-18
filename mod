@@ -1,3 +1,3 @@
-NAME=fastgpt
-VERSION=v0.0.4
-DESCRIPTION="fastgpt Service"
+NAME=pgvector
+VERSION=v0.0.1
+DESCRIPTION="pgvector Service"

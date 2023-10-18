@@ -1,9 +1,9 @@
 services:
-  fastgpt:
+  pgvector:
     restart: always
-    image: whatwewant/fastgpt:${SERVICE_FASTGPT_IMAGE_VERSION}
+    image: whatwewant/pgvector:${SERVICE_PGVECTOR_IMAGE_VERSION}
     environment:
-      MEILI_MASTER_KEY: ${SERVICE_FASTGPT_MEILI_MASTER_KEY}
+      MEILI_MASTER_KEY: ${SERVICE_PGVECTOR_MEILI_MASTER_KEY}
       
 networks:
   default:

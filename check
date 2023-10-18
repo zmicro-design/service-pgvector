@@ -10,12 +10,12 @@ check() {
     cat $SERVICE_CONFIG
   fi
 
-  # service::config_set SERVICE_FASTGPT_PORT text "Port" 5432
+  # service::config_set SERVICE_PGVECTOR_PORT text "Port" 5432
 
-  service::config_set SERVICE_FASTGPT_POSTGRES_USER text "Postgres User" "postgres"
-  service::config_set SERVICE_FASTGPT_POSTGRES_PASSWORD text "Postgres Password" "$(os::random_string 8)"
+  service::config_set SERVICE_PGVECTOR_POSTGRES_USER text "Postgres User" "postgres"
+  service::config_set SERVICE_PGVECTOR_POSTGRES_PASSWORD text "Postgres Password" "$(os::random_string 8)"
 
-  service::config_set SERVICE_FASTGPT_POSTGRES_DB text "Postgres DB"
+  service::config_set SERVICE_PGVECTOR_POSTGRES_DB text "Postgres DB"
 }
 
 check $@
