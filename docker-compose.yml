@@ -1,0 +1,17 @@
+services:
+  fastgpt:
+    restart: always
+    image: whatwewant/fastgpt:${SERVICE_FASTGPT_IMAGE_VERSION}
+    # ports:
+    #   - 0.0.0.0:${SERVICE_FASTGPT_PORT}:5432
+    environment:
+      POSTGRES_USER: ${SERVICE_FASTGPT_POSTGRES_USER}
+      POSTGRES_PASSWORD: ${SERVICE_FASTGPT_POSTGRES_PASSWORD}
+      POSTGRES_DB: ${SERVICE_FASTGPT_POSTGRES_DB}
+    volumes:
+      - ${SERVICE_DATA}:/var/lib/postgresql/data
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

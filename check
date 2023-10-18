@@ -1,0 +1,21 @@
+#!/bin/bash
+
+service::config_set() {
+  config::check_or_set $1 $2 $SERVICE_CONFIG "${@:3}"
+}
+
+check() {
+  if [ "$DEBUG" = "true" ]; then
+    log::info "[DEBUG][service]: $SERVICE_CONFIG"
+    cat $SERVICE_CONFIG
+  fi
+
+  # service::config_set SERVICE_FASTGPT_PORT text "Port" 5432
+
+  service::config_set SERVICE_FASTGPT_POSTGRES_USER text "Postgres User" "postgres"
+  service::config_set SERVICE_FASTGPT_POSTGRES_PASSWORD text "Postgres Password" "$(os::random_string 8)"
+
+  service::config_set SERVICE_FASTGPT_POSTGRES_DB text "Postgres DB"
+}
+
+check $@
